@@ -1,0 +1,20 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "azu",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "npm run build",
+    "prebuild": "mkdir -p build",
+    "build": "browserify index.js -o build/bundle.js"
+  },
+  "dependencies": {
+    "videoplaybackquality": "file:.."
+  },
+  "devDependencies": {
+    "browserify": "^14.5.0"
+  }
+}
