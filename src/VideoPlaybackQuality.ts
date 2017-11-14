@@ -10,17 +10,17 @@ export const isSupported = (): boolean => {
         return false;
     }
 
-    return HTMLVideoElement.prototype.getVideoPlaybackQuality;
+    return !!HTMLVideoElement.prototype.getVideoPlaybackQuality;
 };
 
-export const isWebKit = () => {
+export const isWebKit = (): boolean => {
     // has not getVideoPlaybackQuality, but has webkit prefix method
     return "webkitDroppedFrameCount" in HTMLVideoElement.prototype;
 };
 /**
  * Install the polyfill if needed.
  */
-export const installPolyfill = () => {
+export const installPolyfill = (): void => {
     if (!isBrowser()) {
         return; // ignore non-browser
     }
