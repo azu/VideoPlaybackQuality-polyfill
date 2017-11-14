@@ -4,6 +4,9 @@ A polyfill/ponyfill for [`HTMLVideoElement.prototype.getVideoPlaybackQuality()`]
 
 [`HTMLVideoElement.prototype.getVideoPlaybackQuality()`](https://developer.mozilla.org/ja/docs/Web/API/HTMLVideoElement/getVideoPlaybackQuality "HTMLVideoElement.getVideoPlaybackQuality()") return a [VideoPlaybackQuality](https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality "VideoPlaybackQuality - Web APIs | MDN") object.
 
+
+For more details, see [Media Playback Quality](https://wicg.github.io/media-playback-quality/#videoplaybackquality-interface "Media Playback Quality")
+
 [![example](./doc/example.png)](./example/)
 
 ## Install
