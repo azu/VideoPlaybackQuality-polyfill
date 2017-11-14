@@ -48,6 +48,11 @@ getVideoPlaybackQuality(video);
 
 See [example/](example)
 
+### Notes :memo:
+
+`VideoPlaybackQuality` is connected each `Video` source.
+In other word, It will be reset whtn replace exist video source with new source.
+
 ### Limitation
 
 WebKit can not get complete [VideoPlaybackQuality](https://developer.mozilla.org/en-US/docs/Web/API/VideoPlaybackQuality "VideoPlaybackQuality - Web APIs | MDN").
