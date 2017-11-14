@@ -18,13 +18,17 @@ Install with [npm](https://www.npmjs.com/):
 
 ```js
 require("videoplaybackquality/polyfill");
-
+// usage
+var video = document.getElementById("js-video");
+console.log(video.getVideoPlaybackQuality());
 ```
 
 ### Use as a module(Ponyfill)
 
 ```js
 const getVideoPlaybackQuality = require("videoplaybackquality).getVideoPlaybackQuality;
+// usage
+var video = document.getElementById("js-video");
 getVideoPlaybackQuality(video);
 /*
 {
