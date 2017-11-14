@@ -51,7 +51,7 @@ See [example/](example)
 ### Notes :memo:
 
 `VideoPlaybackQuality` is connected each `Video` source.
-In other word, It will be reset whtn replace exist video source with new source.
+In other words, It will be reset when replace exist video source with new source.
 
 ### Limitation
 
