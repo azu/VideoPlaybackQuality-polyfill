@@ -5,7 +5,7 @@ const isBrowser = (): boolean => {
     return "HTMLVideoElement" in window;
 };
 
-export const isSupported = (): booean => {
+export const isSupported = (): boolean => {
     if (!isBrowser()) {
         return false;
     }
