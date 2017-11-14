@@ -26,7 +26,7 @@ console.log(video.getVideoPlaybackQuality());
 ### Use as a module(Ponyfill)
 
 ```js
-const getVideoPlaybackQuality = require("videoplaybackquality).getVideoPlaybackQuality;
+const getVideoPlaybackQuality = require("videoplaybackquality").getVideoPlaybackQuality;
 // usage
 var video = document.getElementById("js-video");
 getVideoPlaybackQuality(video);
