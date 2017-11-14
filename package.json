@@ -16,7 +16,6 @@
   "main": "lib/VideoPlaybackQuality.js",
   "types": "lib/VideoPlaybackQuality.d.ts",
   "scripts": {
-    "test": "mocha 'test/**/*.ts'",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css}'",
     "precommit": "lint-staged",
     "postcommit": "git reset",
