@@ -1,0 +1,64 @@
+{
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "author": "azu",
+  "license": "MIT",
+  "files": [
+    "bin/",
+    "lib/",
+    "src/"
+  ],
+  "name": "videoplaybackquality",
+  "version": "1.0.0",
+  "description": "A ponyfill/polyfill for VideoPlaybackQuality.",
+  "main": "lib/VideoPlaybackQuality.js",
+  "types": "lib/VideoPlaybackQuality.d.ts",
+  "scripts": {
+    "test": "mocha 'test/**/*.ts'",
+    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css}'",
+    "precommit": "lint-staged",
+    "postcommit": "git reset",
+    "build": "cross-env NODE_ENV=production tsc -p .",
+    "watch": "tsc -p . --watch",
+    "prepublish": "npm run --if-present build"
+  },
+  "keywords": [
+    "video",
+    "quality",
+    "performance",
+    "logging",
+    "ponyfill",
+    "polyfill"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azu/VideoPlaybackQuality-polyfill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/azu/VideoPlaybackQuality-polyfill/issues"
+  },
+  "homepage": "https://github.com/azu/VideoPlaybackQuality-polyfill",
+  "devDependencies": {
+    "@types/mocha": "^2.2.44",
+    "@types/node": "^8.0.51",
+    "cross-env": "^5.1.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^5.0.0",
+    "mocha": "^4.0.1",
+    "prettier": "^1.8.2",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.6.1"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 4
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
