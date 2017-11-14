@@ -5,19 +5,18 @@ const isBrowser = (): boolean => {
     return "HTMLVideoElement" in window;
 };
 
-export const isSupported = () => {
+export const isSupported = (): booean => {
     if (!isBrowser()) {
         return false;
     }
 
-    if (HTMLVideoElement.prototype.getVideoPlaybackQuality) {
-        return true;
-    }
+    return HTMLVideoElement.prototype.getVideoPlaybackQuality;
+};
 
+export const isWebKit = () => {
     // has not getVideoPlaybackQuality, but has webkit prefix method
     return "webkitDroppedFrameCount" in HTMLVideoElement.prototype;
 };
-
 /**
  * Install the polyfill if needed.
  */
@@ -43,13 +42,23 @@ export const getVideoPlaybackQuality = (video: HTMLVideoElement): VideoPlaybackQ
     if (isSupported()) {
         return video.getVideoPlaybackQuality();
     }
-    const webKitVideo = video as any;
-    return {
-        droppedVideoFrames: webKitVideo.webkitDroppedFrameCount,
-        totalVideoFrames: webKitVideo.webkitDecodedFrameCount,
-        // Not provided by this polyfill:
-        corruptedVideoFrames: 0,
-        creationTime: NaN,
-        totalFrameDelay: 0 // Moz extension
-    };
+    if (isWebKit()) {
+        const webKitVideo = video as any;
+        return {
+            droppedVideoFrames: webKitVideo.webkitDroppedFrameCount,
+            totalVideoFrames: webKitVideo.webkitDecodedFrameCount,
+            // Not provided by this polyfill:
+            corruptedVideoFrames: 0,
+            creationTime: NaN,
+            totalFrameDelay: 0 // Moz extension
+        };
+    } else {
+        return {
+            droppedVideoFrames: 0,
+            totalVideoFrames: 0,
+            corruptedVideoFrames: 0,
+            creationTime: NaN,
+            totalFrameDelay: 0 // Moz extension
+        };
+    }
 };
